@@ -5,7 +5,7 @@ Utilitário para auxiliar a interpretar os Logs de erro das ferramentas de valid
 
 ### Disponível online
 
-https://www.viaflux.com/nfschelper - Patrocinado por http://www.viaflux.com
+https://www.viaflux.com/nfschelper - oferecido por http://www.viaflux.com
 
 ### Uso offline
 
