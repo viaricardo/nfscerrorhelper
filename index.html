@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+
+    <title>NFSC Helper</title>
+
+    <meta name="description" content="Ferramenta de auxilio para descrever os códigos de erro de cada NFSC modelo 21">
+    <meta name="author" content="Ricardo Viapiana - viaflux.com">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="jumbotron">
+				<h2>
+					Olá, esta ferramenta irá ajudar a desvendar os erros da NFSC
+				</h2>
+				<p>
+					<br>Para você parar de ficar procurando códigos de erros para cada Nota Fiscal, cole abaixo as linha de erro do log e clique em Processar.
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<form role="form">
+				<div class="form-group">
+					<label for="log">
+						Linhas de Erro do Log:
+					</label>
+					<pre>
+					<textarea class="form-control" id="log" style="height:300px; font-family:courier">
+1;E;M;141;[88136800    ];000000001
+1;A;D;309;[               ];000000001
+1;E;D;317;[88136800    ];000000001
+2;E;M;195;[            ];000000002
+2;A;D;309;[               ];000000002
+2;E;D;340;[Inf.=[Lauro De Freitas]; IBGE=[Lauro de Freitas]];000000002
+3;E;M;195;[            ];000000003
+3;A;D;306;[00000];000000003
+4;A;D;309;[               ];000000004
+5;A;D;309;[               ];000000005
+6;E;D;340;[Inf.=[PATO BRANCO]; IBGE=[Pato Branco]];000000006
+7;E;M;195;[            ];000000007
+7;A;D;309;[               ];000000007
+8;E;M;141;[32245170    ];000000008
+8;E;D;317;[32245170    ];000000008
+9;E;M;195;[            ];000000009
+9;A;D;306;[00000];000000009
+9;A;D;309;[               ];000000009
+11;E;D;340;[Inf.=[PATO BRANCO]; IBGE=[Pato Branco]];000000011
+					</textarea>
+					</pre>
+					<button type="button" class="btn btn-primary" onclick="process();">
+						Processar
+					</button>
+					<button type="button" class="btn btn-danger" onclick="cleanup();">
+						Limpar
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="row">&nbsp;</div>
+	<div class="row">
+		<div class="col-md-12">Resultados:</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+							NF
+						</th>
+						<th>
+							Tipo
+						</th>
+						<th>
+							Descri&ccedil;&atilde;o
+						</th>
+						<th>
+							Dados adicionais
+						</th>
+					</tr>
+				</thead>
+				<tbody id="results">
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/tabelas.js"></script>
+  </body>
+</html>
