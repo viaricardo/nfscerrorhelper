@@ -29,7 +29,7 @@ https://www.viaflux.com/nfschelper - oferecido por http://www.viaflux.com
 
 1) Carregar o arquivo de LOG
 2) Atualização da tabela de erros
-3) Embelezar o código fonte (fiz em 20min)
+3) Embelezar o código fonte
 
 ### Mais informações sobre NFCE e NFSC
 https://portal.fazenda.sp.gov.br/servicos/nf-comunicacao-energia
